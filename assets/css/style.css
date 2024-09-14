@@ -1,0 +1,255 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 5px;
+}
+
+/* HEADER STYLE */
+/* Navbar Style */
+#header {
+    border: 3px solid #000;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 600px;
+    margin: auto;
+    overflow: hidden;
+    width: 100%;
+    gap: 10px;
+    background-image: url("../image/image.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#header .navbar {
+    flex-basis: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+    background-color: rgba(114, 122, 192, 0.5);
+}
+
+/* brand style */
+#header .navbar .brand {
+    display: flex;
+    align-items: center;
+}
+
+#header .navbar .brand .brandlogo {
+    width: 80px;
+}
+
+#header .navbar .brand .brandname {
+    font-size: 40px;
+    font-weight: 900;
+}
+
+/* search style */
+#header .navbar .search {
+    display: flex;
+    height: 60px;
+    width: 250px;
+    align-items: center;
+    border: 3px solid black;
+    background-color: #fff;
+    padding: 3px;
+    border-radius: 10px;
+    overflow: hidden;
+    justify-content: space-between;
+
+}
+
+#header .navbar .search input {
+    height: 100%;
+    font-size: 13px;
+    border: none;
+    padding: 10px;
+}
+
+#header .navbar .search .icon {
+    font-size: 30px;
+    opacity: .5;
+}
+
+#header .navbar .nav {
+    display: flex;
+    gap: 15px;
+}
+
+#header .navbar .nav .nav-item {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+/* BANNER STYLE */
+#header .banner {
+    flex-basis: 80%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#header .banner .container {
+    width: 50%;
+    margin: auto;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    background-color: #888888ad;
+    justify-content: space-between;
+    position: relative;
+}
+
+#header .banner .container .logo {
+    width: 150px;
+}
+
+#header .banner .container .text {
+    width: 60%;
+    font-size: 30px;
+    line-height: 60px;
+    margin-left: 5px;
+}
+
+/* img style */
+.img {
+    position: absolute;
+}
+
+#img1 {
+    left: 2%;
+    width: 350px;
+    bottom: 280px;
+    animation: move 2s ease-in-out alternate-reverse infinite;
+    filter: drop-shadow(3px 5px 19px red);
+}
+
+#img2 {
+    left: 65%;
+    width: 400px;
+    bottom: 80px;
+    animation: move 2s ease-in-out alternate-reverse infinite;
+    filter: drop-shadow(3px 5px 19px yellow);
+}
+
+#img3 {
+    left: 65%;
+    bottom: 200px;
+    width: 600px;
+    animation: move 2s ease-in-out alternate infinite;
+    filter: drop-shadow(3px 5px 19px deeppink);
+}
+
+#img4 {
+    left: -50px;
+    bottom: -30px;
+    width: 600px;
+    animation: move 2s ease-in-out alternate infinite;
+    filter: drop-shadow(3px 5px 19px green);
+}
+
+@keyframes move {
+    from {
+        transform: translateY(5px);
+    }
+
+    to {
+        transform: translateY(30px);
+    }
+}
+
+
+/* Media Queries */
+
+/* Medium size */
+@media all and (max-width: 1023px) {
+
+    #header .banner .container {
+        width: 60%;
+    }
+
+    #header .banner .container .text{
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    #header .banner .img {
+        display: none;
+    }
+}
+
+/* Small size */
+@media all and (max-width: 767px) {
+
+    #header .navbar {
+        height: 90px;
+    }
+
+    #header .navbar .brand {
+        flex-direction: column;
+    }
+
+    #header .navbar .brand .brandlogo {
+        width: 60px;
+        border: 3px dashed #000;
+        border-radius: 6px;
+    }
+
+    #header .navbar .brand .brandname {
+        font-size: 23px;
+        margin-top: 2px;
+        border-top: 1px solid #000;
+    }
+
+    #header .banner .container .text {
+        font-size: 25px;
+        line-height: 40px;
+    }
+}
+
+/* Extra small size (mobile) */
+@media all and (max-width: 639px) {
+
+    #header .navbar .nav .nav-item {
+        font-size: 25px;
+    }
+
+    #header .navbar .brand .brandlogo {
+        width: 40px;
+    }
+
+    #header .navbar .search input{
+        display: none;
+    }
+    #header .navbar .search {
+        background: none;
+        border: none;
+        width: 40px;
+        height: auto;
+        margin-left: auto;
+    }
+    #header .navbar .search .icon {
+        font-size: 25px;
+        opacity: 1;
+        border: 3px solid #000;
+        border-radius: 6px;
+        font-weight: 600;
+    }
+
+    #header .banner .container {
+        height: auto;
+        width: 50%;
+        flex-direction: column;
+    }
+
+    #header .banner .container .text {
+        font-size: 15px;
+        line-height: 20px;
+    }
+}
